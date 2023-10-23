@@ -59,7 +59,7 @@ class Genero:
 
         # Converte a sigla da UF em código IBGE
         if isinstance(uf, str):
-            uf = self._UFS[uf]
+            uf = self._UFS[uf.upper()]
 
         self._f = self._gender_freq(nome, sexo="F", uf=uf)
         self._m = self._gender_freq(nome, sexo="M", uf=uf)
@@ -138,7 +138,12 @@ class Genero:
             "percentual": p,
         }
 
-    def _gender_freq(nome: str, sexo: Literal["f", "m"], uf: Optional[int] = None):
+    def _gender_freq(
+        self,
+        nome: str,
+        sexo: Literal["f", "m"],
+        uf: Optional[int] = None,
+    ):
         try:
             freq = ibge.nomes(nome, sexo=sexo, localidade=uf)
             return freq.squeeze().sum()
