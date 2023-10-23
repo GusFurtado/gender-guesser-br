@@ -1,9 +1,43 @@
-from typing import Optional, Literal
+from typing import Literal, Optional, Union
 from DadosAbertosBrasil import ibge
 
 
 class Genero:
-    def __init__(self, nome: str, uf: int = None):
+    _UFS = {
+        "RO": 11,
+        "AC": 12,
+        "AM": 13,
+        "RR": 14,
+        "PA": 15,
+        "AP": 16,
+        "TO": 17,
+        "MA": 21,
+        "PI": 22,
+        "CE": 23,
+        "RN": 24,
+        "PB": 25,
+        "PE": 26,
+        "AL": 27,
+        "SE": 28,
+        "BA": 29,
+        "MG": 31,
+        "ES": 32,
+        "RJ": 33,
+        "SP": 35,
+        "PR": 41,
+        "SC": 42,
+        "RS": 43,
+        "MS": 50,
+        "MT": 51,
+        "GO": 52,
+        "DF": 53,
+    }
+
+    def __init__(self, nome: str, uf: Optional[Union[int, str]] = None):
+        # Converte a sigla da UF em código IBGE
+        if isinstance(uf, str):
+            uf = self._UFS[uf]
+
         self._f = self._gender_freq(nome, sexo="F", uf=uf)
         self._m = self._gender_freq(nome, sexo="M", uf=uf)
 
