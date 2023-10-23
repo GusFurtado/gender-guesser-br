@@ -1,0 +1,1 @@
+from .genero import Genero
