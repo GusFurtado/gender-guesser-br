@@ -42,7 +42,7 @@ Após importar o pacote, crie uma instância do objeto `Genero` usando o nome pr
 
 >>> rr = Genero(nome="darci", uf="rr")
 >>> rr()
-'desconheido'
+'desconhecido'
 ```
 
 Os argumentos `nome` e `uf` são case insensitive, então você pode usar letras maiúsculas e minúsculas como quiser, desde que uf seja a sigla de duas letras da UF ou o código IBGE de dois dígitos. Utilize a função `localidade` do DadosAbertosBrasil para obter uma lista completa dos códigos das UFs.
