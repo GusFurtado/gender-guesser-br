@@ -91,7 +91,7 @@ class Genero:
             raise ValueError("Insira um valor entre 0.5 e 1.0 para `corte_ambos`.")
         if corte_maioria < 0.5 or corte_maioria > 1:
             raise ValueError("Insira um valor entre 0.5 e 1.0 para `corte_maioria`.")
-        if corte_ambos > corte_maioria:
+        if corte_ambos >= corte_maioria:
             raise ValueError(
                 "O valor de `corte_maioria` deve ser maior que o valor de `corte_ambos`."
             )
@@ -147,5 +147,7 @@ class Genero:
         try:
             freq = ibge.nomes(nome, sexo=sexo, localidade=uf)
             return freq.squeeze().sum()
+
+        # Caso não encontre valores para o nome procurado
         except ValueError:
             return 0
