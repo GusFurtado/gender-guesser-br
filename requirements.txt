@@ -1,1 +1,3 @@
-DadosAbertosBrasil
+DadosAbertosBrasil==1.0.0
+twine==5.0.0
+wheel==0.42
