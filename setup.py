@@ -1,14 +1,24 @@
 from setuptools import setup
 from os import path
 
+
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
+
+with open("gender_guesser_br/__init__.py", "r") as file:
+    lines = file.readlines()
+    for line in lines:
+        if line.startswith("__version__"):
+            version = line.split(" = ")[1]
+            break
+
+
 setup(
     name="gender_guesser_br",
     packages=["gender_guesser_br"],
-    version="1.0.0",
+    version=version,
     license="MIT",
     python_requires=">=3.6",
     description="Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio.",
