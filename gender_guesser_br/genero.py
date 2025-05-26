@@ -1,38 +1,12 @@
 from typing import Literal, Optional, Union
+
 from DadosAbertosBrasil import ibge
+
+from .errors import GenderGuesserError
+from ._ufs import UFS
 
 
 class Genero:
-    _UFS = {
-        "RO": 11,
-        "AC": 12,
-        "AM": 13,
-        "RR": 14,
-        "PA": 15,
-        "AP": 16,
-        "TO": 17,
-        "MA": 21,
-        "PI": 22,
-        "CE": 23,
-        "RN": 24,
-        "PB": 25,
-        "PE": 26,
-        "AL": 27,
-        "SE": 28,
-        "BA": 29,
-        "MG": 31,
-        "ES": 32,
-        "RJ": 33,
-        "SP": 35,
-        "PR": 41,
-        "SC": 42,
-        "RS": 43,
-        "MS": 50,
-        "MT": 51,
-        "GO": 52,
-        "DF": 53,
-    }
-
     def __init__(self, nome: str, uf: Optional[Union[int, str]] = None):
         """Identificador de Gênero
 
@@ -59,7 +33,7 @@ class Genero:
 
         # Converte a sigla da UF em código IBGE
         if isinstance(uf, str):
-            uf = self._UFS[uf.upper()]
+            uf = UFS[uf.upper()]
 
         self._f = self._gender_freq(nome, sexo="f", uf=uf)
         self._m = self._gender_freq(nome, sexo="m", uf=uf)
@@ -88,11 +62,15 @@ class Genero:
         """
         # Validar argumentos
         if corte_ambos < 0.5 or corte_ambos > 1:
-            raise ValueError("Insira um valor entre 0.5 e 1.0 para `corte_ambos`.")
+            raise GenderGuesserError(
+                "Insira um valor entre 0.5 e 1.0 para `corte_ambos`."
+            )
         if corte_maioria < 0.5 or corte_maioria > 1:
-            raise ValueError("Insira um valor entre 0.5 e 1.0 para `corte_maioria`.")
+            raise GenderGuesserError(
+                "Insira um valor entre 0.5 e 1.0 para `corte_maioria`."
+            )
         if corte_ambos >= corte_maioria:
-            raise ValueError(
+            raise GenderGuesserError(
                 "O valor de `corte_maioria` deve ser maior que o valor de `corte_ambos`."
             )
 
