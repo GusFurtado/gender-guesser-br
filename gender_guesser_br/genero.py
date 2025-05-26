@@ -61,8 +61,8 @@ class Genero:
         if isinstance(uf, str):
             uf = self._UFS[uf.upper()]
 
-        self._f = self._gender_freq(nome, sexo="F", uf=uf)
-        self._m = self._gender_freq(nome, sexo="M", uf=uf)
+        self._f = self._gender_freq(nome, sexo="f", uf=uf)
+        self._m = self._gender_freq(nome, sexo="m", uf=uf)
 
     def __call__(self, corte_ambos: float = 0.6, corte_maioria: float = 0.8) -> str:
         """Retorna um texto com a previsão de gênero.
