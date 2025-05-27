@@ -27,9 +27,9 @@ setup(
     author="Gustavo Furtado",
     author_email="gustavofurtado2@gmail.com",
     url="https://github.com/GusFurtado/gender_guesser_br",
-    download_url="https://github.com/GusFurtado/gender_guesser_br/archive/1.0.0.tar.gz",
+    download_url=f"https://github.com/GusFurtado/gender_guesser_br/archive/{version}.tar.gz",
     keywords=["brasil", "ibge", "dadosabertos", "gender", "genero"],
-    install_requires=["DadosAbertosBrasil"],
+    install_requires=["DadosAbertosBrasil>=1.0.0"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
