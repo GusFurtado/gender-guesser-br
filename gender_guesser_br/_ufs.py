@@ -1,3 +1,5 @@
+"""Mapeamento de siglas de Unidades Federativas para códigos IBGE."""
+
 UFS = {
     "RO": 11,
     "AC": 12,

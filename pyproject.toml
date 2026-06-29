@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gender-guesser-br"
+version = "1.2.0"
+description = "Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Gustavo Furtado da Silva", email = "gustavofurtado2@gmail.com"}
+]
+keywords = ["brasil", "ibge", "dadosabertos", "gender", "genero"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "DadosAbertosBrasil>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/GusFurtado/gender-guesser-br"
+Download = "https://github.com/GusFurtado/gender-guesser-br/archive/1.2.0.tar.gz"
+
+[tool.setuptools]
+packages = ["gender_guesser_br"]
+
+[tool.setuptools.package-data]
+gender_guesser_br = ["py.typed"]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+exclude = [".git", "__pycache__", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "C4", "SIM", "D", "ANN", "TRY", "EM", "COM", "PL", "PT"]
+ignore = ["E501", "D203", "D212"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D100", "D103", "S101", "ANN201"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["gender_guesser_br"]
