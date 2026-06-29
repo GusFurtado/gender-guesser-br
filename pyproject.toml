@@ -7,7 +7,7 @@ name = "gender-guesser-br"
 version = "1.2.0"
 description = "Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
     {name = "Gustavo Furtado da Silva", email = "gustavofurtado2@gmail.com"}
@@ -21,8 +21,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Natural Language :: Portuguese (Brazilian)",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
