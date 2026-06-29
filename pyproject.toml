@@ -29,6 +29,7 @@ classifiers = [
 ]
 dependencies = [
     "DadosAbertosBrasil>=1.0.0",
+    "urllib3>=2.6.3",
 ]
 
 [project.urls]
