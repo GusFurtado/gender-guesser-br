@@ -1,4 +1,8 @@
 # Gender Guesser Brasil
+
+[![PyPI - Version](https://img.shields.io/pypi/v/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
+[![PyPI - License](https://img.shields.io/pypi/l/gender-guesser-br)](https://github.com/GusFurtado/gender-guesser-br/blob/main/LICENSE)
 ### [Powered by DadosAbertosBrasil](https://www.gustavofurtado.com/dab.html)
 
 Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio.
@@ -7,7 +11,9 @@ Este pacote utiliza o DadosAbertosBrasil para capturar informações do Censo De
 
 ## Instalação
 
-```pip install gender-guesser-br```
+```bash
+pip install gender-guesser-br
+```
 
 ## Fazendo previsões
 
@@ -54,7 +60,7 @@ Os argumentos `nome` e `uf` são case insensitive, então você pode usar letras
 
 ## Refinando resultados
 
-Ao fazer a previsão, utilize os argumentos `corte_ambos` e `corte_maioria` para definir qual é a proporção mínima em que o objeto para a ter certeza de que o nome é de determinado gênero ou que é considerado de ambos os gêneros.
+Ao fazer a previsão, utilize os argumentos `corte_ambos` e `corte_maioria` para definir qual é a proporção mínima em que o objeto passa a ter certeza de que o nome é de determinado gênero ou que é considerado de ambos os gêneros.
 
 ```python
 >>> ariel = Genero("Ariel", uf="RJ")
@@ -80,3 +86,7 @@ Essas propriedades são dicionários contendo o número total de habitantes do g
 >>> camila.m
 {'absoluto': 1697, 'percentual': 0.003598785277426688}
 ```
+
+## Licença
+
+Este projeto é distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

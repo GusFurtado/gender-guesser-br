@@ -33,7 +33,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/GusFurtado/gender-guesser-br"
-Download = "https://github.com/GusFurtado/gender-guesser_br/archive/1.2.0.tar.gz"
+Download = "https://github.com/GusFurtado/gender-guesser-br/archive/1.2.0.tar.gz"
 
 [tool.setuptools]
 packages = ["gender_guesser_br"]
