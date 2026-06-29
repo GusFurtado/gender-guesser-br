@@ -29,6 +29,7 @@ classifiers = [
 ]
 dependencies = [
     "DadosAbertosBrasil>=1.0.0",
+    "requests>=2.3.3",
 ]
 
 [project.urls]
@@ -43,7 +44,7 @@ gender_guesser_br = ["py.typed"]
 
 [dependency-groups]
 dev = [
-    "pytest>=7.0.0",
+    "pytest>=9.0.3",
     "pytest-cov>=4.0.0",
     "ruff>=0.1.0",
 ]
