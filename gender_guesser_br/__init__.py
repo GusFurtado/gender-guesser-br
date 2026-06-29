@@ -1,3 +1,5 @@
+"""Pacote brasileiro para adivinhar o gênero de um nome próprio com base no Censo IBGE."""
+
 from .genero import Genero
 
 __all__ = ["Genero"]
