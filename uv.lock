@@ -282,6 +282,7 @@ version = "1.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "dadosabertosbrasil" },
+    { name = "requests" },
 ]
 
 [package.dev-dependencies]
@@ -292,11 +293,14 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dadosabertosbrasil", specifier = ">=1.0.0" }]
+requires-dist = [
+    { name = "dadosabertosbrasil", specifier = ">=1.0.0" },
+    { name = "requests", specifier = ">=2.3.3" },
+]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pytest", specifier = ">=7.0.0" },
+    { name = "pytest", specifier = ">=9.0.3" },
     { name = "pytest-cov", specifier = ">=4.0.0" },
     { name = "ruff", specifier = ">=0.1.0" },
 ]
