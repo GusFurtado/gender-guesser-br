@@ -3,7 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
 [![PyPI - License](https://img.shields.io/pypi/l/gender-guesser-br)](https://github.com/GusFurtado/gender-guesser-br/blob/main/LICENSE)
-### [Powered by DadosAbertosBrasil](https://www.gustavofurtado.com/dab.html)
+### [Powered by DadosAbertosBrasil](https://www.gustavofurtado.com/DadosAbertosBrasil/)
 
 Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio.
 
