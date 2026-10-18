@@ -1,92 +1,37 @@
-# Gender Guesser Brasil
+<p align="center">
+  <a href="https://www.gustavofurtado.com/gender-guesser-br/"><img src="https://www.gustavofurtado.com/assets/img/projects/gender-guesser-br.png" alt="gender-guesser-br" width="640"></a>
+</p>
 
-[![PyPI - Version](https://img.shields.io/pypi/v/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/gender-guesser-br)](https://pypi.org/project/gender-guesser-br/)
-[![PyPI - License](https://img.shields.io/pypi/l/gender-guesser-br)](https://github.com/GusFurtado/gender-guesser-br/blob/main/LICENSE)
-### [Powered by DadosAbertosBrasil](https://www.gustavofurtado.com/DadosAbertosBrasil/)
+<p align="center">
+  <b>Adivinhe o gênero de um nome próprio com os dados do Censo do IBGE.</b>
+</p>
 
-Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio.
+<p align="center">
+  <a href="https://pypi.org/project/gender-guesser-br/"><img src="https://img.shields.io/pypi/v/gender-guesser-br" alt="PyPI"></a>
+  <a href="https://pypi.org/project/gender-guesser-br/"><img src="https://img.shields.io/pypi/pyversions/gender-guesser-br" alt="Versões do Python"></a>
+  <a href="https://pepy.tech/projects/gender-guesser-br"><img src="https://static.pepy.tech/badge/gender-guesser-br/month" alt="Downloads"></a>
+  <a href="https://github.com/GusFurtado/gender-guesser-br/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/gender-guesser-br" alt="Licença"></a>
+</p>
 
-Este pacote utiliza o DadosAbertosBrasil para capturar informações do Censo Demográfico das APIs oficiais do IBGE e calcula a probabilidade de que determinado nome próprio seja feminino ou masculino.
+<p align="center">
+  <b><a href="https://www.gustavofurtado.com/gender-guesser-br/">Documentação</a></b>
+</p>
+
+Versão brasileira do pacote Python para adivinhar o gênero de um nome próprio. Os dados vêm da
+API de nomes do IBGE, por meio do [DadosAbertosBrasil](https://www.gustavofurtado.com/DadosAbertosBrasil/).
 
 ## Instalação
 
-```bash
+```sh
 pip install gender-guesser-br
 ```
 
-## Fazendo previsões
+## Principais recursos
 
-Após importar o pacote, crie uma instância do objeto `Genero` usando o nome próprio como argumento. Por fim, utilize o método `__call__` para conferir a previsão.
+- **`Genero(nome)()`**: previsão entre `feminino`, `masculino`, `provavelmente_*`, `ambos` e `desconhecido`.
+- **`Genero(nome, uf=...)`**: previsão com os dados de uma UF, pela sigla ou pelo código IBGE.
+- **`corte_ambos` e `corte_maioria`**: ajuste dos limites de cada previsão.
+- **`.f` e `.m`**: os números brutos do IBGE, com o total e a proporção de cada gênero.
 
-```python
->>> from gender_guesser_br import Genero
-
->>> nome = Genero("gustavo")
->>> nome()
-'masculino'
-```
-
-É possível utilizar o argumento `uf` para fazer uma previsão por unidade federativa, o que pode aumentar a precisão. Veja que "Darci" é um nome que pode receber qualquer classificação, dependendo da UF.
-
-```python
->>> rs = Genero(nome="darci", uf="rs")
->>> rs()
-'masculino'
-
->>> sc = Genero(nome="darci", uf="sc")
->>> sc()
-'provavelmente_masculino'
-
->>> sp = Genero(nome="darci", uf="sp")
->>> sp()
-'ambos'
-
->>> ac = Genero(nome="darci", uf="ac")
->>> ac()
-'feminino'
-
->>> rr = Genero(nome="darci", uf="rr")
->>> rr()
-'desconhecido'
-```
-
-Os argumentos `nome` e `uf` são case insensitive, então você pode usar letras maiúsculas e minúsculas como quiser, desde que uf seja a sigla de duas letras da UF ou o código IBGE de dois dígitos. Utilize a função `localidade` do DadosAbertosBrasil para obter uma lista completa dos códigos das UFs.
-
-```python
->>> from DadosAbertosBrasil import ibge
->>> ibge.localidades(nivel="estados")
-```
-
-## Refinando resultados
-
-Ao fazer a previsão, utilize os argumentos `corte_ambos` e `corte_maioria` para definir qual é a proporção mínima em que o objeto passa a ter certeza de que o nome é de determinado gênero ou que é considerado de ambos os gêneros.
-
-```python
->>> ariel = Genero("Ariel", uf="RJ")
->>> ariel(corte_ambos=0.8, corte_maioria=0.9)
-'ambos'
-
->>> ariel(corte_ambos=0.6, corte_maioria=0.8)
-'provavelmente_masculino'
-
->>> ariel(corte_ambos=0.6, corte_maioria=0.7)
-'masculino'
-```
-
-Para ter ainda mais controle, utilize as propriedades `f` e `m` para obter acesso aos números brutos.
-
-Essas propriedades são dicionários contendo o número total de habitantes do gênero correspondente que possuem aquele nome e a proporção do gênero.
-
-```python
->>> camila = Genero("Camila")
->>> camila.f
-{'absoluto': 469851, 'percentual': 0.9964012147225733}
-
->>> camila.m
-{'absoluto': 1697, 'percentual': 0.003598785277426688}
-```
-
-## Licença
-
-Este projeto é distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Veja os [primeiros passos](https://www.gustavofurtado.com/gender-guesser-br/primeiros-passos/) e a
+[referência](https://www.gustavofurtado.com/gender-guesser-br/referencia/).

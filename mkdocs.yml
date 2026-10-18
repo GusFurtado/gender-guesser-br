@@ -1,0 +1,67 @@
+site_name: gender-guesser-br
+site_description: Adivinhe o gênero de um nome próprio com os dados do Censo do IBGE.
+site_url: https://www.gustavofurtado.com/gender-guesser-br/
+repo_url: https://github.com/GusFurtado/gender-guesser-br
+repo_name: GusFurtado/gender-guesser-br
+edit_uri: edit/main/docs/
+
+extra_css:
+  - assets/extra.css
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Mudar para o modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para o modo claro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+
+nav:
+  - Início: index.md
+  - Instalação: instalacao.md
+  - Primeiros passos: primeiros-passos.md
+  - Referência: referencia.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+            filters: ["!^_"]
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: false
+            merge_init_into_class: true
+            separate_signature: true
+            show_signature_annotations: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - tables
+  - toc:
+      permalink: true

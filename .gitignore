@@ -33,3 +33,6 @@ dmypy.json
 
 # Ruff
 .ruff_cache/
+
+# Saída do MkDocs
+site/
