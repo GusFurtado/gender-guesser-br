@@ -1,0 +1,8 @@
+/* Fundo do cabeçalho: o card do gender-guesser-br em gustavofurtado.com. */
+.md-header {
+  background: #062a22 url("https://www.gustavofurtado.com/assets/img/projects/gender-guesser-br.svg") center / cover no-repeat;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.4), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+}

@@ -32,7 +32,9 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/GusFurtado/gender-guesser-br"
-Download = "https://github.com/GusFurtado/gender-guesser-br/archive/1.2.0.tar.gz"
+Repository = "https://github.com/GusFurtado/gender-guesser-br"
+Documentation = "https://www.gustavofurtado.com/gender-guesser-br/"
+Issues = "https://github.com/GusFurtado/gender-guesser-br/issues"
 
 [tool.setuptools]
 packages = ["gender_guesser_br"]
@@ -45,6 +47,11 @@ dev = [
     "pytest>=9.0.3",
     "pytest-cov>=4.0.0",
     "ruff>=0.1.0",
+]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.26",
 ]
 
 [tool.pytest.ini_options]
