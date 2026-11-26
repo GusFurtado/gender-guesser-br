@@ -40,6 +40,7 @@ nav:
   - Instalação: instalacao.md
   - Primeiros passos: primeiros-passos.md
   - Referência: referencia.md
+  - Sobre: sobre.md
 
 plugins:
   - search
